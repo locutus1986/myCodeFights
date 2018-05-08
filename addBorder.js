@@ -18,15 +18,16 @@ Input/Output
 
 */
 function addBorder(picture) {
-  const topBtmAskNum = picture[0].length + 2;
-  let topBtm = '*'.repeat(topBtmAskNum);
-  for(let i=0; i <= picture.length-1; i++){
-    picture[i] = "*" + picture[i] + "*"
-  }
+  const topBtm = '*'.repeat(picture[0].length + 2);
+  picture = picture.map(str => '*'+ str +'*');
   picture.unshift(topBtm);
   picture.push(topBtm);
-  console.log(picture);
   return picture;
 }
+
 a = ['abc', 'efg', 'hij'];
 addBorder(a);
+
+// for(let i=0; i <= picture.length-1; i++){
+//   picture[i] = "*" + picture[i] + "*"
+// }
