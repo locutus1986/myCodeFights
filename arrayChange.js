@@ -7,13 +7,13 @@ to obtain a strictly increasing sequence from the input.
 */
 
 function arrayChange(inputArray){
-    let difference  = 0
+    let moves  = 0
     for(let i=0;i<=inputArray.length;i++){
         if(inputArray[i] >= inputArray[i+1]){
-         tempVar =inputArray[i] - inputArray[i+1]+1;
-         inputArray[i+1] += tempVar;
-         difference += tempVar;
+         const difference = inputArray[i] - inputArray[i+1]+1;
+         inputArray[i+1] += difference;
+         moves += difference;
      }
     }
-    return difference;
+    return moves;
 }
