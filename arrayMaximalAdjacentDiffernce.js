@@ -4,14 +4,9 @@
 */
 
 function arrayMaximalAdjacentDifference(inputArray) {
-  let largestGap = 0
-  for(let i =0; i < inputArray.length; i++){
-    let theGap = Math.abs(inputArray[i] - inputArray[i+1])
-    if(theGap > largestGap){
-      largestGap = theGap
-    }
-  }
-  return largestGap
+  return inputArray.reduce((acc, val, i, array) => {
+    let total = Math.abs(val - array[i+1])
+    if(total > acc) return sum
+    else return acc
+  }, 0)
 }
-
-arrayMaximalAdjacentDifference([1,5,7,9,8,2,3])
